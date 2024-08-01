@@ -7,7 +7,9 @@ def binary_search_with_upper_bound(arr, target):
         iterations += 1
         mid = (low + high) // 2
 
-        if arr[mid] < target:
+        if arr[mid] == target:
+            return iterations, arr[mid]
+        elif arr[mid] < target:
             low = mid + 1
         else:
             upper_bound = arr[mid]
@@ -23,7 +25,7 @@ if __name__ == "__main__":
         f"Виведе: (кількість ітерацій, верхню межу) {binary_search_with_upper_bound(arr, 15.1)}"
     )  
     print(
-        f"Виведе: (кількість ітерацій, верхню межу) {binary_search_with_upper_bound(arr, 4)}"
+        f"Виведе: (кількість ітерацій, верхню межу) {binary_search_with_upper_bound(arr, 4.6)}"
     )
     print(
         f"Виведе: (кількість ітерацій, верхню межу) {binary_search_with_upper_bound(arr, 6.0)}"
